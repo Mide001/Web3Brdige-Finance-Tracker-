@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-interface FormProps {
+interface TransactionFormProps {
   addTransaction: (transaction: Transaction) => void;
 }
 
@@ -10,7 +10,7 @@ interface Transaction {
   amount: number;
 }
 
-const Form: React.FC<FormProps> = ({ addTransaction }) => {
+const TransactionForm: React.FC<TransactionFormProps> = ({ addTransaction }) => {
   const [type, setType] = useState<'income' | 'expense'>('income');
   const [category, setCategory] = useState('');
   const [amount, setAmount] = useState<number | string>('');
@@ -64,4 +64,4 @@ const Form: React.FC<FormProps> = ({ addTransaction }) => {
   );
 };
 
-export default Form;
+export default TransactionForm;
